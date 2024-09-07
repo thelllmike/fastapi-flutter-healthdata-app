@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.models.health_data_model import HealthData
-from app.schemas.health_data_schema import HealthDataCreate
+from models.health_data_model import HealthData
+from schemas.health_data_schema import HealthDataCreate
 
 def create_health_data(db: Session, health_data: HealthDataCreate, user_id: int):
     db_health_data = HealthData(**health_data.dict(), customer_id=user_id)
